@@ -15,7 +15,7 @@ You can install these requirements by running `pip install -r requirement.txt` o
 
 ### Rules to contribute
 
-Check out these [Contributing Guidelines](https://github.com/charan2308/CONTRIBUTION.md) to learn more!
+Check out these [Contributing Guidelines](https://github.com/charan2308/weatherforecast/blob/main/CONTRIBUTION.md) to learn more!
 
 
 
