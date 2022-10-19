@@ -10,12 +10,11 @@ You can install these requirements by running `pip install -r requirement.txt` o
 ### Things to note
 
 
-- If the API is not working, register to the API at https://rapidapi.com/tvjan/api/tvmaze and change the API key to your new registered key.
+- The api key variable is empty, get your api key by following the steps mentioned in the [openweathermap api key](#openweathermap-api-key) section.
 - To run the program, run the main.py file.
 
 ### For building and testing the project locally:
-<br>
-Getting your openweathermap api key:
+### Openweathermap api key:
 <br>
 1. Signup at :https://home.openweathermap.org/users/sign_up<br>
 2. Check your email for the confirmation link.<br>
