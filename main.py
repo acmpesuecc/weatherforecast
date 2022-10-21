@@ -37,10 +37,13 @@ def fetch():
 
         # store the value corresponding
         # to the "temp" key of y
-        current_temperature = y["temp"]
+        '''current_temperature = y["temp"]
         current_temperature= int(current_temperature)
         current_temperature=current_temperature - 273
-        temp = current_temperature
+        temp = current_temperature'''
+
+        #optimised
+        temp = int(y['temp']) - 273
         
 
         # store the value corresponding
@@ -49,12 +52,12 @@ def fetch():
 
         # store the value corresponding
         # to the "humidity" key of y
-        current_humidity = y["humidity"]
+        '''current_humidity = y["humidity"]
         current_humidity = float(current_humidity)
-        current_humidity= current_humidity/100
+        current_humidity= current_humidity/100'''
 
-        humid = current_humidity
-
+        #optimised
+        humid = float(y['humidity'])/100
         # store the value of "weather"
         # key in variable z
         z = x["weather"]
@@ -63,20 +66,21 @@ def fetch():
         # to the "description" key at
         # the 0th index of z
         weather_description = z[0]["description"]
-        label1.config(text = str(temp))
-        label2.config(text = str(current_pressure))
+        label1.config(text = str(temp) + ' C')
+        label2.config(text = str(current_pressure) + ' hPa')
         label3.config(text = str(humid))
         label4.config(text = str(weather_description))
       
         # print following values
-        result = (" Temperature (in celsius  unit) = " +
-                        str(temp) +
-            "\n atmospheric pressure (in hPa unit) = " +
-                        str(current_pressure) +
-            "\n humidity (in decimal value) = " +
+        result = (" Temperature= " +
+                        str(temp) + " C" +
+            "\n atmospheric pressure = " +
+                        str(current_pressure) + " hPa" +
+            "\n humidity = " +
                         str(humid) +
             "\n description = " +
                         str(weather_description))
+        print(result)
 
     else:
         print(" City Not Found ")
@@ -84,6 +88,7 @@ root = Tk()
 root.title('Weather Forecast')
 w = Label(root, text='Enter the name of the city to fetch the weather:')
 i=Entry(root)
+
 b=Button(root,text='Submit',command=fetch)
 l1 = Label(root, text = 'Temperature :')
 label1 = Label(root, text = '')
