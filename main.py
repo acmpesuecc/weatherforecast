@@ -38,7 +38,7 @@ def fetch():
         # store the value corresponding
         # to the "temp" key of y
         current_temperature = y["temp"]
-        temp = current_temperature
+        temp = current_temperature-273.15
 
         # store the value corresponding
         # to the "pressure" key of y
@@ -47,7 +47,7 @@ def fetch():
         # store the value corresponding
         # to the "humidity" key of y
         current_humidity = y["humidity"]
-        humid = current_humidity
+        humid = current_humidity/100
 
         # store the value of "weather"
         # key in variable z
