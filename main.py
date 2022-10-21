@@ -1,17 +1,18 @@
 
-import requests, json
+import requests
+import json
 from tkinter import *
 
 
 def fetch():
     # Enter your API key here
-    api_key = ""
+    api_key = "a50d669741efb4e89ada018225a09126"
 
     # base_url variable to store url
     base_url = "http://api.openweathermap.org/data/2.5/weather?"
 
     # Give city name
-    city_name = i.get() 
+    city_name = i.get()
 
     # complete_url variable to store
     # complete url address
@@ -58,22 +59,24 @@ def fetch():
         weather_description = z[0]["description"]
 
         # print following values
-        print(" Temperature (in kelvin unit) = " +
-                        str(current_temperature) +
-            "\n atmospheric pressure (in hPa unit) = " +
-                        str(current_pressure) +
-            "\n humidity (in percentage) = " +
-                        str(current_humidity) +
-            "\n description = " +
-                        str(weather_description))
+        print(" Temperature (in degree celsius) = " +
+              str(round(current_temperature, 3) - 273.15) +
+              "\n atmospheric pressure (in hPa unit) = " +
+              str(current_pressure) +
+              "\n humidity (in decimal) = " +
+              str(current_humidity / 100) +
+              "\n description = " +
+              str(weather_description))
 
     else:
         print(" City Not Found ")
+
+
 root = Tk()
 root.title('Weather forecast')
 w = Label(root, text='Enter the name of the city to fetch the weather:')
-i=Entry(root)
-b=Button(root,text='submit',command=fetch)
+i = Entry(root)
+b = Button(root, text='submit', command=fetch)
 w.pack()
 i.pack()
 b.pack()
