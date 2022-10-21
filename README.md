@@ -17,8 +17,9 @@ You can install these requirements by running `pip install -r requirement.txt` o
 ### Openweathermap api key:
 <br>
 1. Signup at :https://home.openweathermap.org/users/sign_up<br>
-2. Check your email for the confirmation link.<br>
+2. Check your email for the verification link and verify your email.<br>
 3. You can refer to your api key from :https://home.openweathermap.org/api_keys<br>
+<b>NOTE: your API key will be activated in 5-10 mins after you verify your email id. Please use your api key and run the program after some time.</b>
 
 ### Rules to contribute
 
