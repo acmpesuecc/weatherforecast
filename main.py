@@ -4,7 +4,11 @@ from tkinter import *
 
 def fetch():
     # Enter your API key here
+<<<<<<< HEAD
     api_key = "8ec6af652686cbe5b7b800002c8fba1a"
+=======
+    api_key = "3fab24e55b9b359c3be0456c71b01e27"
+>>>>>>> c9acdc6b92eb825e848e4f6c4b1cc815abd1a7c2
 
     # base_url variable to store url
     base_url = "http://api.openweathermap.org/data/2.5/weather?"
@@ -34,6 +38,7 @@ def fetch():
         # store the value of "main"
         # key in variable y
         y = x["main"]
+<<<<<<< HEAD
         #print
         # store the value corresponding
         # to the "temp" key of y
@@ -41,6 +46,13 @@ def fetch():
         current_temperature= int(current_temperature)
         current_temperature=current_temperature - 273
         
+=======
+
+        # store the value corresponding
+        # to the "temp" key of y
+        current_temperature = y["temp"]
+        temp = current_temperature
+>>>>>>> c9acdc6b92eb825e848e4f6c4b1cc815abd1a7c2
 
         # store the value corresponding
         # to the "pressure" key of y
@@ -48,8 +60,12 @@ def fetch():
         # store the value corresponding
         # to the "humidity" key of y
         current_humidity = y["humidity"]
+<<<<<<< HEAD
         current_humidity = float(current_humidity)
         current_humidity= current_humidity/100
+=======
+        humid = current_humidity
+>>>>>>> c9acdc6b92eb825e848e4f6c4b1cc815abd1a7c2
 
         # store the value of "weather"
         # key in variable z
@@ -59,14 +75,27 @@ def fetch():
         # to the "description" key at
         # the 0th index of z
         weather_description = z[0]["description"]
-
+        label1.config(text = str(temp))
+        label2.config(text = str(current_pressure))
+        label3.config(text = str(humid))
+        label4.config(text = str(weather_description))
+      
         # print following values
+<<<<<<< HEAD
         print(" Temperature (in celsius unit) = " +
                         str(current_temperature) +
             "\n atmospheric pressure (in hPa unit) = " +
                         str(current_pressure) +
             "\n humidity (in decimal value) = " +
                         str(current_humidity) +
+=======
+        result = (" Temperature (in kelvin unit) = " +
+                        str(temp) +
+            "\n atmospheric pressure (in hPa unit) = " +
+                        str(current_pressure) +
+            "\n humidity (in percentage) = " +
+                        str(humid) +
+>>>>>>> c9acdc6b92eb825e848e4f6c4b1cc815abd1a7c2
             "\n description = " +
                         str(weather_description))
 
@@ -77,7 +106,23 @@ root.title('Weather forecast')
 w = Label(root, text='Enter the name of the city to fetch the weather:')
 i=Entry(root)
 b=Button(root,text='submit',command=fetch)
+l1 = Label(root, text = 'temperature =')
+label1 = Label(root, text = '')
+l2 = Label(root, text = 'pressure =')
+label2 = Label(root, text = '')
+l3 = Label(root, text = 'humidity =')
+label3 = Label(root, text = '')
+l4 = Label(root, text = 'weather =')
+label4 = Label(root, text = '')
 w.pack()
 i.pack()
 b.pack()
+l1.pack()
+label1.pack()
+l2.pack()
+label2.pack()
+l3.pack()
+label3.pack()
+l4.pack()
+label4.pack()
 root.mainloop()
