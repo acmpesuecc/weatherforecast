@@ -1,5 +1,7 @@
 import requests, json
 from tkinter import *
+from random import shuffle
+import time
 
 
 def fetch():
@@ -37,10 +39,13 @@ def fetch():
 
         # store the value corresponding
         # to the "temp" key of y
-        current_temperature = y["temp"]
+        '''current_temperature = y["temp"]
         current_temperature= int(current_temperature)
         current_temperature=current_temperature - 273
-        temp = current_temperature
+        temp = current_temperature'''
+
+        #optimised
+        temp = int(y['temp']) - 273
         
 
         # store the value corresponding
@@ -49,12 +54,12 @@ def fetch():
 
         # store the value corresponding
         # to the "humidity" key of y
-        current_humidity = y["humidity"]
+        '''current_humidity = y["humidity"]
         current_humidity = float(current_humidity)
-        current_humidity= current_humidity/100
+        current_humidity= current_humidity/100'''
 
-        humid = current_humidity
-
+        #optimised
+        humid = float(y['humidity'])/100
         # store the value of "weather"
         # key in variable z
         z = x["weather"]
@@ -63,39 +68,65 @@ def fetch():
         # to the "description" key at
         # the 0th index of z
         weather_description = z[0]["description"]
-        label1.config(text = str(temp))
-        label2.config(text = str(current_pressure))
+        label1.config(text = str(temp) + ' C')
+        label2.config(text = str(current_pressure) + ' hPa')
         label3.config(text = str(humid))
         label4.config(text = str(weather_description))
       
         # print following values
-        result = (" Temperature (in celsius  unit) = " +
-                        str(temp) +
-            "\n atmospheric pressure (in hPa unit) = " +
-                        str(current_pressure) +
-            "\n humidity (in decimal value) = " +
+        result = (" Temperature= " +
+                        str(temp) + " C" +
+            "\n atmospheric pressure = " +
+                        str(current_pressure) + " hPa" +
+            "\n humidity = " +
                         str(humid) +
             "\n description = " +
                         str(weather_description))
+        print(result)
 
     else:
         print(" City Not Found ")
+    # Define the backround color for all the widgets
+def change_color():
+   colors= ['#e9c46a','#e76f51','#264653','#2a9d8f','#e85d04','#a2d2ff','#06d6a0','#4d908e']
+   while True:
+      shuffle(colors)
+      for i in range(0,len(colors)):
+         root.config(background=colors[i])
+         root.update()
+         time.sleep(1)
 root = Tk()
-root.geometry("500x500")
-root.title('Weather forecast')
-root.configure(bg='cyan')
-w = Label(root, text='Enter the name of the city to fetch the weather:', font=("goudy old style", 30),bg="#053246",fg="violet",relief='solid')
-i=Entry(root, width=30, font=('Arial 24'),relief='solid',borderwidth=2)
-b=Button(root,text='submit',command=fetch,font=("goudy old style",10),bg="blue",fg="white",height=2, width=15,relief='solid',borderwidth=5)
-l1 = Label(root, text = 'temperature =')
+root.title('Weather Forecast')
+root.configure(bg='light blue')
+w = Label(root, text='Enter the name of the city to fetch the weather:')
+w.config(bg= "pink", fg= "black")
+i=Entry(root)
+
+b=Button(root,text='Submit',command=fetch, bg = 'cyan')
+l1 = Label(root, text = 'Temperature :')
 label1 = Label(root, text = '')
-l2 = Label(root, text = 'pressure =')
+l1.config(bg= "pink", fg= "black")
+l2 = Label(root, text = 'Pressure :')
 label2 = Label(root, text = '')
-l3 = Label(root, text = 'humidity =')
+l2.config(bg= "pink", fg= "black")
+l3 = Label(root, text = 'Humidity :')
 label3 = Label(root, text = '')
-l4 = Label(root, text = 'weather =')
+l3.config(bg= "pink", fg= "black")
+l4 = Label(root, text = 'Weather :')
 label4 = Label(root, text = '')
+l4.config(bg= "pink", fg= "black")
+btn=Button(root, text="Chg color", command= change_color,bg="violet",borderwidth=5,fg="white")
+
 w.pack()
 i.pack()
 b.pack()
+btn.pack(pady= 10)
+l1.pack()
+label1.pack()
+l2.pack()
+label2.pack()
+l3.pack()
+label3.pack()
+l4.pack()
+label4.pack()
 root.mainloop()
