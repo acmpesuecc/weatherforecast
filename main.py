@@ -4,7 +4,7 @@ from tkinter import *
 
 def fetch():
     # Enter your API key here
-    api_key = "8ec6af652686cbe5b7b800002c8fba1a"
+    api_key = "b55ed3cfb145f3978f3ff4a02dfd3db4"
 
     # base_url variable to store url
     base_url = "http://api.openweathermap.org/data/2.5/weather?"
@@ -115,4 +115,17 @@ l3.pack()
 label3.pack()
 l4.pack()
 label4.pack()
+
+f = ("Times bold", 14)
+def prevPage():
+    root.destroy()
+    import page2
+
+Button(
+    root,
+    text="Next Page",
+    font=f,
+    command=prevPage
+    ).pack(fill=X, expand=TRUE, side=LEFT)
+
 root.mainloop()
