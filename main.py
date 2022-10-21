@@ -1,11 +1,10 @@
-
 import requests, json
 from tkinter import *
 
 
 def fetch():
     # Enter your API key here
-    api_key = ""
+    api_key = "8ec6af652686cbe5b7b800002c8fba1a"
 
     # base_url variable to store url
     base_url = "http://api.openweathermap.org/data/2.5/weather?"
@@ -35,18 +34,22 @@ def fetch():
         # store the value of "main"
         # key in variable y
         y = x["main"]
-    #print👍
+        #print
         # store the value corresponding
         # to the "temp" key of y
         current_temperature = y["temp"]
+        current_temperature= int(current_temperature)
+        current_temperature=current_temperature - 273
+        
 
         # store the value corresponding
         # to the "pressure" key of y
         current_pressure = y["pressure"]
-
         # store the value corresponding
         # to the "humidity" key of y
         current_humidity = y["humidity"]
+        current_humidity = float(current_humidity)
+        current_humidity= current_humidity/100
 
         # store the value of "weather"
         # key in variable z
@@ -58,11 +61,11 @@ def fetch():
         weather_description = z[0]["description"]
 
         # print following values
-        print(" Temperature (in kelvin unit) = " +
+        print(" Temperature (in celsius unit) = " +
                         str(current_temperature) +
             "\n atmospheric pressure (in hPa unit) = " +
                         str(current_pressure) +
-            "\n humidity (in percentage) = " +
+            "\n humidity (in decimal value) = " +
                         str(current_humidity) +
             "\n description = " +
                         str(weather_description))
