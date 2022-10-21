@@ -1,5 +1,7 @@
 import requests, json
 from tkinter import *
+from random import shuffle
+import time
 
 
 def fetch():
@@ -84,6 +86,15 @@ def fetch():
 
     else:
         print(" City Not Found ")
+    # Define the backround color for all the widgets
+def change_color():
+   colors= ['#e9c46a','#e76f51','#264653','#2a9d8f','#e85d04','#a2d2ff','#06d6a0','#4d908e']
+   while True:
+      shuffle(colors)
+      for i in range(0,len(colors)):
+         root.config(background=colors[i])
+         root.update()
+         time.sleep(1)
 root = Tk()
 root.title('Weather Forecast')
 root.configure(bg='light blue')
@@ -92,6 +103,10 @@ w.config(bg= "pink", fg= "black")
 i=Entry(root)
 
 b=Button(root,text='Submit',command=fetch, bg = 'cyan')
+<<<<<<< HEAD
+btn=Button(root, text="Chg color", command= change_color,bg="blue",borderwidth=5,fg="white")
+=======
+>>>>>>> ac8f77fd70be0a3bc171150705a4ca8524fe625e
 l1 = Label(root, text = 'Temperature :')
 label1 = Label(root, text = '')
 l1.config(bg= "pink", fg= "black")
@@ -104,9 +119,14 @@ l3.config(bg= "pink", fg= "black")
 l4 = Label(root, text = 'Weather :')
 label4 = Label(root, text = '')
 l4.config(bg= "pink", fg= "black")
+<<<<<<< HEAD
+
+=======
+>>>>>>> ac8f77fd70be0a3bc171150705a4ca8524fe625e
 w.pack()
 i.pack()
 b.pack()
+btn.pack(pady= 10)
 l1.pack()
 label1.pack()
 l2.pack()
