@@ -4,7 +4,7 @@ from tkinter import *
 
 def fetch():
     # Enter your API key here
-    api_key = "3fab24e55b9b359c3be0456c71b01e27"
+    api_key = "8ec6af652686cbe5b7b800002c8fba1a"
 
     # base_url variable to store url
     base_url = "http://api.openweathermap.org/data/2.5/weather?"
@@ -38,7 +38,10 @@ def fetch():
         # store the value corresponding
         # to the "temp" key of y
         current_temperature = y["temp"]
+        current_temperature= int(current_temperature)
+        current_temperature=current_temperature - 273
         temp = current_temperature
+        
 
         # store the value corresponding
         # to the "pressure" key of y
@@ -47,6 +50,9 @@ def fetch():
         # store the value corresponding
         # to the "humidity" key of y
         current_humidity = y["humidity"]
+        current_humidity = float(current_humidity)
+        current_humidity= current_humidity/100
+
         humid = current_humidity
 
         # store the value of "weather"
@@ -63,11 +69,11 @@ def fetch():
         label4.config(text = str(weather_description))
       
         # print following values
-        result = (" Temperature (in kelvin unit) = " +
+        result = (" Temperature (in celsius  unit) = " +
                         str(temp) +
             "\n atmospheric pressure (in hPa unit) = " +
                         str(current_pressure) +
-            "\n humidity (in percentage) = " +
+            "\n humidity (in decimal value) = " +
                         str(humid) +
             "\n description = " +
                         str(weather_description))
