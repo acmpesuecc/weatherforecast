@@ -6,7 +6,7 @@ from tkinter import *
 
 def fetch():
     # Enter your API key here
-    api_key = "a50d669741efb4e89ada018225a09126"
+    api_key = ""
 
     # base_url variable to store url
     base_url = "http://api.openweathermap.org/data/2.5/weather?"
