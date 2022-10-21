@@ -57,7 +57,7 @@ def fetch():
         current_humidity= current_humidity/100'''
 
         #optimised
-        humid = float(y['humidity'])//100
+        humid = float(y['humidity'])/100
         # store the value of "weather"
         # key in variable z
         z = x["weather"]
@@ -66,16 +66,16 @@ def fetch():
         # to the "description" key at
         # the 0th index of z
         weather_description = z[0]["description"]
-        label1.config(text = str(temp))
-        label2.config(text = str(current_pressure))
+        label1.config(text = str(temp) + ' C')
+        label2.config(text = str(current_pressure) + ' hPa')
         label3.config(text = str(humid))
         label4.config(text = str(weather_description))
       
         # print following values
         result = (" Temperature= " +
-                        str(temp) + "C" +
+                        str(temp) + " C" +
             "\n atmospheric pressure = " +
-                        str(current_pressure) + "hPa"
+                        str(current_pressure) + " hPa" +
             "\n humidity = " +
                         str(humid) +
             "\n description = " +
@@ -89,7 +89,7 @@ root.title('Weather forecast')
 w = Label(root, text='Enter the name of the city to fetch the weather:')
 i=Entry(root)
 b=Button(root,text='submit',command=fetch)
-l1 = Label(root, text = 'temperature =')
+l1 = Label(root, text = 'Temperature =')
 label1 = Label(root, text = '')
 l2 = Label(root, text = 'pressure =')
 label2 = Label(root, text = '')
