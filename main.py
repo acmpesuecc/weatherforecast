@@ -37,10 +37,13 @@ def fetch():
 
         # store the value corresponding
         # to the "temp" key of y
-        current_temperature = y["temp"]
+        '''current_temperature = y["temp"]
         current_temperature= int(current_temperature)
         current_temperature=current_temperature - 273
-        temp = current_temperature
+        temp = current_temperature'''
+
+        #optimised
+        temp = int(y['temp']) - 273
         
 
         # store the value corresponding
@@ -49,12 +52,12 @@ def fetch():
 
         # store the value corresponding
         # to the "humidity" key of y
-        current_humidity = y["humidity"]
+        '''current_humidity = y["humidity"]
         current_humidity = float(current_humidity)
-        current_humidity= current_humidity/100
+        current_humidity= current_humidity/100'''
 
-        humid = current_humidity
-
+        #optimised
+        humid = float(y['humidity'])//100
         # store the value of "weather"
         # key in variable z
         z = x["weather"]
@@ -69,14 +72,15 @@ def fetch():
         label4.config(text = str(weather_description))
       
         # print following values
-        result = (" Temperature (in celsius  unit) = " +
-                        str(temp) +
-            "\n atmospheric pressure (in hPa unit) = " +
-                        str(current_pressure) +
-            "\n humidity (in decimal value) = " +
+        result = (" Temperature= " +
+                        str(temp) + "C" +
+            "\n atmospheric pressure = " +
+                        str(current_pressure) + "hPa"
+            "\n humidity = " +
                         str(humid) +
             "\n description = " +
                         str(weather_description))
+        print(result)
 
     else:
         print(" City Not Found ")
