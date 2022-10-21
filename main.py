@@ -34,7 +34,7 @@ def fetch():
         # store the value of "main"
         # key in variable y
         y = x["main"]
-    
+
         # store the value corresponding
         # to the "temp" key of y
         current_temperature = y["temp"]
