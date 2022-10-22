@@ -81,7 +81,7 @@ def fetch():
             "\n humidity = " +
                         str(humid) +
             "\n description = " +
-                        str(weather_description))
+                        (str(weather_description)).capitalize())
         print(result)
 
     else:
@@ -97,25 +97,25 @@ def change_color():
          time.sleep(1)
 root = Tk()
 root.title('Weather Forecast')
-root.configure(bg='light blue')
+root.configure(bg='black')
 w = Label(root, text='Enter the name of the city to fetch the weather:')
-w.config(bg= "pink", fg= "black")
-i=Entry(root)
+w.config(bg= "yellow", fg= "black")
+i=Entry(root, bg="white")
 
-b=Button(root,text='Submit',command=fetch, bg = 'cyan')
+b=Button(root,text='Submit',command=fetch, bg = 'lime green', fg='white')
 btn=Button(root, text="Chg color", command= change_color,bg="blue",borderwidth=5,fg="white")
 l1 = Label(root, text = 'Temperature :')
-label1 = Label(root, text = '')
-l1.config(bg= "pink", fg= "black")
+label1 = Label(root, text = '', bg="black", fg="white")
+l1.config(bg= "purple", fg= "yellow")
 l2 = Label(root, text = 'Pressure :')
-label2 = Label(root, text = '')
-l2.config(bg= "pink", fg= "black")
+label2 = Label(root, text = '', bg="black", fg="white")
+l2.config(bg= "yellow", fg= "purple")
 l3 = Label(root, text = 'Humidity :')
-label3 = Label(root, text = '')
-l3.config(bg= "pink", fg= "black")
+label3 = Label(root, text = '', bg="black", fg="white")
+l3.config(bg= "purple", fg= "yellow")
 l4 = Label(root, text = 'Weather :')
-label4 = Label(root, text = '')
-l4.config(bg= "pink", fg= "black")
+label4 = Label(root, text = '', bg="black", fg="white")
+l4.config(bg= "yellow", fg= "purple")
 
 w.pack()
 i.pack()
@@ -139,6 +139,8 @@ Button(
     root,
     text="Next Page",
     font=f,
+    bg="lime green",
+    fg="white",
     command=prevPage
     ).pack(fill=X, expand=TRUE, side=LEFT)
 
