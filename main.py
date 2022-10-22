@@ -1,7 +1,5 @@
 import requests, json
 from tkinter import *
-from random import shuffle
-import time
 
 
 def fetch():
@@ -86,19 +84,11 @@ def fetch():
 
     else:
         print(" City Not Found ")
-    # Define the backround color for all the widgets
-def change_color():
-   colors= ['#e9c46a','#e76f51','#264653','#2a9d8f','#e85d04','#a2d2ff','#06d6a0','#4d908e']
-   while True:
-      shuffle(colors)
-      for i in range(0,len(colors)):
-         root.config(background=colors[i])
-         root.update()
-         time.sleep(1)
 root = Tk()
 root.title('Weather Forecast')
 root.configure(bg='black')
 w = Label(root, text='Enter the name of the city to fetch the weather:')
+
 w.config(bg= "yellow", fg= "black")
 i=Entry(root, bg="white")
 
@@ -120,7 +110,6 @@ l4.config(bg= "yellow", fg= "purple")
 w.pack()
 i.pack()
 b.pack()
-btn.pack(pady= 10)
 l1.pack()
 label1.pack()
 l2.pack()
