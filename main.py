@@ -1,7 +1,5 @@
 import requests, json
 from tkinter import *
-from random import shuffle
-import time
 
 
 def fetch():
@@ -120,7 +118,6 @@ l4.config(bg= "#346641", fg= "black")
 w.pack()
 i.pack()
 b.pack()
-btn.pack(pady= 10)
 l1.pack()
 label1.pack()
 l2.pack()
