@@ -103,10 +103,7 @@ w.config(bg= "pink", fg= "black")
 i=Entry(root)
 
 b=Button(root,text='Submit',command=fetch, bg = 'cyan')
-<<<<<<< HEAD
 btn=Button(root, text="Chg color", command= change_color,bg="blue",borderwidth=5,fg="white")
-=======
->>>>>>> ac8f77fd70be0a3bc171150705a4ca8524fe625e
 l1 = Label(root, text = 'Temperature :')
 label1 = Label(root, text = '')
 l1.config(bg= "pink", fg= "black")
@@ -119,10 +116,7 @@ l3.config(bg= "pink", fg= "black")
 l4 = Label(root, text = 'Weather :')
 label4 = Label(root, text = '')
 l4.config(bg= "pink", fg= "black")
-<<<<<<< HEAD
 
-=======
->>>>>>> ac8f77fd70be0a3bc171150705a4ca8524fe625e
 w.pack()
 i.pack()
 b.pack()
