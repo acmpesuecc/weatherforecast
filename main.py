@@ -98,41 +98,27 @@ def change_color():
 root = Tk()
 root.title('Weather Forecast')
 root.configure(bg='light blue')
-w = Label(root, text='Enter the name of the city to fetch the weather:')
-w.config(bg= "pink", fg= "black")
-i=Entry(root)
+root.geometry("750x500")
+w = Label(root, text='Enter the name of the city to fetch the weather:',font=('Helvetica 15 bold',30),borderwidth=5)
+w.config(bg="#053246", fg= "violet")
+w.pack(padx=30,pady=3)
 
-b=Button(root,text='Submit',command=fetch, bg = 'cyan')
-<<<<<<< HEAD
-btn=Button(root, text="Chg color", command= change_color,bg="blue",borderwidth=5,fg="white")
-=======
->>>>>>> ac8f77fd70be0a3bc171150705a4ca8524fe625e
-l1 = Label(root, text = 'Temperature :')
-label1 = Label(root, text = '')
-l1.config(bg= "pink", fg= "black")
-l2 = Label(root, text = 'Pressure :')
-label2 = Label(root, text = '')
-l2.config(bg= "pink", fg= "black")
-l3 = Label(root, text = 'Humidity :')
-label3 = Label(root, text = '')
-l3.config(bg= "pink", fg= "black")
-l4 = Label(root, text = 'Weather :')
-label4 = Label(root, text = '')
-l4.config(bg= "pink", fg= "black")
-<<<<<<< HEAD
+i=Entry(root,font=('Helvetica 15 bold',20),width=40)
+i.pack(padx=10,pady=10)
+b=Button(root,text='Submit',command=fetch,borderwidth=5,fg="white",bg="blue",width=20).place(x=480,y=150)
 
-=======
->>>>>>> ac8f77fd70be0a3bc171150705a4ca8524fe625e
+btn=Button(root, text="Chg color", command= change_color,bg="blue",borderwidth=5,fg="white",width=20).place(x=120,y=150)
+
+l1 = Label(root, text = 'Temperature :',bg="white",fg="black").place(x=230,y=230)
+label1 = Label(root, text = '',bg="white",fg="black",width=2).place(x=320,y=230)
+l2 = Label(root, text = 'Pressure :',bg="white",fg="black").place(x=420,y=230)
+label2 = Label(root, text = '',bg="white",fg="black",width=2).place(x=490,y=230)
+l3 = Label(root, text = 'Humidity :',bg="white",fg="black",width=10).place(x=230,y=280)
+label3 = Label(root, text = '',bg="white",fg="black",width=2).place(x=320,y=280)
+l4 = Label(root, text = 'Weather :',bg="white",fg="black").place(x=420,y=280)
+label4 = Label(root, text = '',bg="white",fg="black",width=2).place(x=490,y=280)
+
 w.pack()
 i.pack()
-b.pack()
-btn.pack(pady= 10)
-l1.pack()
-label1.pack()
-l2.pack()
-label2.pack()
-l3.pack()
-label3.pack()
-l4.pack()
-label4.pack()
+
 root.mainloop()
