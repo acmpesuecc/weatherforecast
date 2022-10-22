@@ -40,8 +40,9 @@ def nextPage():
     ws.destroy()
     import main
 
-
+label3 = Label(ws,text = "Enter your pincode")
 i=Entry(ws)
+label3.pack()
 i.pack()
 button_submit = Button(ws, text ="Submit", command=fetch).pack()
 
