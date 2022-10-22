@@ -1,12 +1,10 @@
 import requests, json
 from tkinter import *
-from random import shuffle
-import time
 
 
 def fetch():
     # Enter your API key here
-    api_key = "8ec6af652686cbe5b7b800002c8fba1a"
+    api_key = "b55ed3cfb145f3978f3ff4a02dfd3db4"
 
     # base_url variable to store url
     base_url = "http://api.openweathermap.org/data/2.5/weather?"
@@ -81,22 +79,14 @@ def fetch():
             "\n humidity = " +
                         str(humid) +
             "\n description = " +
-                        str(weather_description))
+                        (str(weather_description)).capitalize())
         print(result)
 
     else:
         print(" City Not Found ")
-    # Define the backround color for all the widgets
-def change_color():
-   colors= ['#e9c46a','#e76f51','#264653','#2a9d8f','#e85d04','#a2d2ff','#06d6a0','#4d908e']
-   while True:
-      shuffle(colors)
-      for i in range(0,len(colors)):
-         root.config(background=colors[i])
-         root.update()
-         time.sleep(1)
 root = Tk()
 root.title('Weather Forecast')
+
 root.configure(bg='light blue')
 root.geometry("750x500")
 w = Label(root, text='Enter the name of the city to fetch the weather:',font=('Helvetica 15 bold',30),borderwidth=5)
@@ -120,5 +110,6 @@ label4 = Label(root, text = '',bg="white",fg="black",width=2).place(x=490,y=280)
 
 w.pack()
 i.pack()
+
 
 root.mainloop()
