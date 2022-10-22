@@ -12,25 +12,23 @@ f = ("Times bold", 14)
 def fetch():
     zipcode = i.get()
     countrycode = "US"
-    url = f"http://api.openweathermap.org/geo/1.0/zip?zip={zipcode},{countrycode}&appid={api_key}"
 
-    response = requests.get(url)
+    response = requests.get('https://thezipcodes.com/api/v1/search?zipCode='+zipcode+'&apiKey=e6fb2c75c061c85c065ae4bf6ba8e229');
 
     x = response.json()
-    print(x)
+    if x["success"] == True:
+        la = x["location"][0]["latitude"]
+        lo = x["location"][0]["longitude"]
     #if x["cod"] != "404":
-    la = x["lat"]
-    lo= x["lon"]
 
+        final_url = f"http://api.openweathermap.org/data/2.5/air_pollution?lat={la}&lon={lo}&appid={api_key}"
 
-    final_url = f"http://api.openweathermap.org/data/2.5/air_pollution?lat={la}&lon={lo}&appid={api_key}"
+        response1 = requests.get(final_url)
 
-    response1 = requests.get(final_url)
-
-    x1 = response1.json()
-    print(x1)
-    aqi=x1['list'][0]['main']['aqi']
-    label1.config(text=str(aqi))
+        x1 = response1.json()
+        print(x1)
+        aqi=x1['list'][0]['main']['aqi']
+        label1.config(text=str(aqi))
 
 
 

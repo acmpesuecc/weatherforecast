@@ -92,6 +92,7 @@ w.config(bg= "#150050", fg= "#FB2576")
 i=Entry(root)
 
 b=Button(root,text='Submit',command=fetch, bg= "#150050", fg= "#FB2576")
+
 l1 = Label(root, text = 'Temperature :')
 label1 = Label(root, text = '')
 l1.config(bg= "#150050", fg= "#FB2576")
@@ -103,7 +104,9 @@ label3 = Label(root, text = '')
 l3.config(bg= "#150050", fg= "#FB2576")
 l4 = Label(root, text = 'Weather :')
 label4 = Label(root, text = '')
+
 l4.config(bg= "#150050", fg= "#FB2576")
+
 w.pack()
 i.pack()
 b.pack()
