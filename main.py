@@ -88,7 +88,7 @@ def fetch():
         print(" City Not Found ")
     # Define the backround color for all the widgets
 def change_color():
-   colors= ['#e9c46a','#e76f51','#264653','#2a9d8f','#e85d04','#a2d2ff','#06d6a0','#4d908e']
+   colors= ['#e9c46a','#92a898','#c5d485','#85b2d4','#e85d04','#a2d2ff','#06d6a0','#4d908e','#6468ed']
    while True:
       shuffle(colors)
       for i in range(0,len(colors)):
@@ -97,25 +97,25 @@ def change_color():
          time.sleep(1)
 root = Tk()
 root.title('Weather Forecast')
-root.configure(bg='light blue')
+root.configure(bg='#a6deb5')
 w = Label(root, text='Enter the name of the city to fetch the weather:')
-w.config(bg= "pink", fg= "black")
+w.config(bg= "#346641", fg= "black")
 i=Entry(root)
 
-b=Button(root,text='Submit',command=fetch, bg = 'cyan')
-btn=Button(root, text="Chg color", command= change_color,bg="blue",borderwidth=5,fg="white")
+b=Button(root,text='Submit',command=fetch, bg = '#346641')
+btn=Button(root, text="Chg color", command= change_color,bg="#346641",borderwidth=5,fg="white")
 l1 = Label(root, text = 'Temperature :')
 label1 = Label(root, text = '')
-l1.config(bg= "pink", fg= "black")
+l1.config(bg= "#346641", fg= "black")
 l2 = Label(root, text = 'Pressure :')
 label2 = Label(root, text = '')
-l2.config(bg= "pink", fg= "black")
+l2.config(bg= "#346641", fg= "black")
 l3 = Label(root, text = 'Humidity :')
 label3 = Label(root, text = '')
-l3.config(bg= "pink", fg= "black")
+l3.config(bg= "#346641", fg= "black")
 l4 = Label(root, text = 'Weather :')
 label4 = Label(root, text = '')
-l4.config(bg= "pink", fg= "black")
+l4.config(bg= "#346641", fg= "black")
 
 w.pack()
 i.pack()
