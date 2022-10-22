@@ -2,7 +2,7 @@ from tkinter import *
 import requests
 ws = Tk()
 ws.geometry('400x300')
-ws.title('PythonGuides')
+ws.title('AQI based on PIN Code')
 ws['bg'] = '#ffbf00'
 
 api_key = "b55ed3cfb145f3978f3ff4a02dfd3db4"
