@@ -28,7 +28,10 @@ def fetch():
         x1 = response1.json()
         print(x1)
         aqi=x1['list'][0]['main']['aqi']
+        pm2_5=x1['list'][0]['components']['pm2_5']
+        pm10 = x1['list'][0]['components']['pm10']
         label1.config(text=str(aqi))
+        label2.config(text='PM 2.5 = '+str(pm2_5)+', PM 10 = '+str(pm10))
 
 
 
@@ -52,7 +55,9 @@ button_submit = Button(ws, text ="Submit", command=fetch).pack()
 #label1.config(text = str(aqi) + ' C')
 l1 = Label(ws, text = 'AQI :').pack()
 label1 = Label(ws, text = '')
+label2=Label(ws,text='')
 label1.pack()
+label2.pack()
 Label(
     ws,
 
