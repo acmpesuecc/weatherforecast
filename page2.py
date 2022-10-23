@@ -56,7 +56,9 @@ button_submit = Button(ws, text ="Submit", command=fetch).pack()
 l1 = Label(ws, text = 'AQI :').pack()
 label1 = Label(ws, text = '')
 label2=Label(ws,text='')
+label3=Label(ws,text='Particulate matter values:')
 label1.pack()
+label3.pack()
 label2.pack()
 Label(
     ws,
