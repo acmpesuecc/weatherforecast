@@ -1,11 +1,13 @@
 from tkinter import *
 import requests
+
 ws = Tk()
 ws.geometry('400x300')
 ws.title('AQI based on PIN Code')
 ws['bg'] = '#ffbf00'
 
-api_key = "b55ed3cfb145f3978f3ff4a02dfd3db4"
+API_KEY = "" # Enter your openweather API key here
+ZIP_API_KEY = "" # Enter your zipcode API key here
 
 f = ("Times bold", 14)
 
@@ -13,7 +15,9 @@ def fetch():
     zipcode = i.get()
     countrycode = "US"
 
-    response = requests.get('https://thezipcodes.com/api/v1/search?zipCode='+zipcode+'&apiKey=e6fb2c75c061c85c065ae4bf6ba8e229');
+    zip_url = "https://thezipcodes.com/api/v1/search?zipCode=" + zipcode + f"&apiKey={ZIP_API_KEY}"
+
+    response = requests.get(zip_url)
 
     x = response.json()
     if x["success"] == True:
@@ -21,7 +25,7 @@ def fetch():
         lo = x["location"][0]["longitude"]
     #if x["cod"] != "404":
 
-        final_url = f"http://api.openweathermap.org/data/2.5/air_pollution?lat={la}&lon={lo}&appid={api_key}"
+        final_url = f"http://api.openweathermap.org/data/2.5/air_pollution?lat={la}&lon={lo}&appid={API_KEY}"
 
         response1 = requests.get(final_url)
 
@@ -33,23 +37,15 @@ def fetch():
         label1.config(text=str(aqi))
         label2.config(text='PM 2.5 = '+str(pm2_5)+', PM 10 = '+str(pm10))
 
-
-
-
-
-
-
 def nextPage():
     ws.destroy()
-    import main
+    import main as main
 
 label3 = Label(ws,text = "Enter your pincode")
 i=Entry(ws)
 label3.pack()
 i.pack()
 button_submit = Button(ws, text ="Submit", command=fetch).pack()
-
-
 
 #aqi = int(y['aqi']) - 273
 #label1.config(text = str(aqi) + ' C')
@@ -62,8 +58,6 @@ label3.pack()
 label2.pack()
 Label(
     ws,
-
-
     padx=20,
     pady=20,
     bg='#ffbf00',
@@ -76,6 +70,5 @@ Button(
     font=f,
     command=nextPage
 ).pack(fill=X, expand=TRUE, side=LEFT)
-
 
 ws.mainloop()
