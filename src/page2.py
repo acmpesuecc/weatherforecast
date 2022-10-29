@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 import requests
 
 ws = Tk()
@@ -20,10 +21,9 @@ def fetch():
     response = requests.get(zip_url)
 
     x = response.json()
-    if x["success"] == True:
+    try:
         la = x["location"][0]["latitude"]
         lo = x["location"][0]["longitude"]
-    #if x["cod"] != "404":
 
         final_url = f"http://api.openweathermap.org/data/2.5/air_pollution?lat={la}&lon={lo}&appid={API_KEY}"
 
@@ -36,6 +36,8 @@ def fetch():
         pm10 = x1['list'][0]['components']['pm10']
         label1.config(text=str(aqi))
         label2.config(text='PM 2.5 = '+str(pm2_5)+', PM 10 = '+str(pm10))
+    except Exception:
+        messagebox.showerror("Error!", "Zip code not found!")
 
 def nextPage():
     ws.destroy()
