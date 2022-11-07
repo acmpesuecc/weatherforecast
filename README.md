@@ -1,6 +1,6 @@
 # weatherforecast
 
-Weather Forecast is a simple GUI weather information search engine built using Python. Users can search for the weather based on cities.
+Weather Forecast is a simple GUI weather information search engine built using Python. Users can search for the weather based on cities and pincode of the area of interest.
 
 ### Requirements to run:
 - [requests](https://docs.python-requests.org/en/latest/)
