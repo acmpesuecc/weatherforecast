@@ -1,3 +1,6 @@
+#35 fixed
+#we have to import time module for time.sleep() function to work
+import time
 from email import message
 from tkinter import messagebox
 import requests, json
@@ -134,9 +137,12 @@ l4.pack()
 label4.pack()
 
 f = ("Times bold", 14)
+global ws
 def prevPage():
-    root.destroy()
+    root.withdraw()
     import page2 as page2
+    page2.ws.deiconify()
+    
 
 Button(
     root,
