@@ -7,7 +7,7 @@ Weather Forecast is a simple GUI weather information search engine built using P
 
 You can install these requirements by running
 ```bash
-pip install -r requirement.txt
+pip install -r requirements.txt
 ```
 
 on your terminal or command prompt. Make sure to be in the cloned directory before installing. 
@@ -15,7 +15,10 @@ on your terminal or command prompt. Make sure to be in the cloned directory befo
 ### Things to note
 
 
-- The api key variable is empty, get your api key by following the steps mentioned in the [openweathermap API key](#openweathermap-api-key) section.
+- The API_KEY variable is empty, get your api key by following the steps mentioned in the [openweathermap API key](#openweathermap-api-key) section.
+- ```bash
+  API_KEY = "YOUR_OPENWEATHER_API_KEY"
+  ```
 - To run the program, run the main.py file.
 
 ### For building and testing the project locally:
