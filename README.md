@@ -5,7 +5,12 @@ Weather Forecast is a simple GUI weather information search engine built using P
 ### Requirements to run:
 - [requests](https://docs.python-requests.org/en/latest/)
 
-You can install these requirements by running `pip install -r requirement.txt` on your terminal or command prompt. Make sure to be in the cloned directory before installing. 
+You can install these requirements by running
+```bash
+pip install -r requirement.txt
+```
+
+on your terminal or command prompt. Make sure to be in the cloned directory before installing. 
 
 ### Things to note
 
@@ -34,6 +39,10 @@ You can install these requirements by running `pip install -r requirement.txt` o
 Check out these [Contributing Guidelines](https://github.com/charan2308/weatherforecast/blob/main/CONTRIBUTION.md) to learn more!
 
 ***
-This repo is for the ACM PESU-ECC Hacknight 4.0 2022. If you require any help or have any queries, contact the maintainer in charge:
-
+This repo is for the ACM PESU-ECC Hacknight 5.0 2023. If you require any help or have any queries, contact the maintainer in charge:
+## Authors
 [Charan S Gowda](https://github.com/charan2308)
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+
