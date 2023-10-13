@@ -7,7 +7,7 @@ import time
 
 API_KEY = "" # Enter your API key here
 
-BASE_URL = "http://api.openweathermap.org/data/2.5/weather?" # base_url variable to store url
+BASE_URL = "http://api.openweathermap.org/data/2.5/weather?" # base_url variable to store url!
 
 def fetch():
     # Give city name
