@@ -40,8 +40,9 @@ def fetch():
         messagebox.showerror("Error!", "Zip code not found!")
 
 def nextPage():
-    ws.destroy()
+    ws.withdraw()
     import main as main
+    main.root.deiconify()
 
 label3 = Label(ws,text = "Enter your pincode")
 i=Entry(ws)

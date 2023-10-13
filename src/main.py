@@ -136,9 +136,12 @@ l4.pack()
 label4.pack()
 
 f = ("Times bold", 14)
+global ws
 def prevPage():
-    root.destroy()
+    root.withdraw()
     import page2 as page2
+    page2.ws.deiconify()
+    
 
 Button(
     root,
