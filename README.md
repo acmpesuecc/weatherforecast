@@ -16,10 +16,13 @@ on your terminal or command prompt. Make sure to be in the cloned directory befo
 
 
 - The API_KEY variable is empty, get your api key by following the steps mentioned in the [openweathermap API key](#openweathermap-api-key) section.
-- ```bash
+   ```bash
   API_KEY = "YOUR_OPENWEATHER_API_KEY"
   ```
-- To run the program, run the main.py file.
+- Run the main.py file using
+  ```bash
+  python main.py
+  ```
 
 ### For building and testing the project locally:
 
