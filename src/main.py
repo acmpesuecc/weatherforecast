@@ -3,6 +3,7 @@ from tkinter import messagebox
 import requests, json
 from tkinter import *
 from random import shuffle
+import time
 
 API_KEY = "" # Enter your API key here
 
