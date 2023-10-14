@@ -7,6 +7,7 @@ import requests, json
 from tkinter import *
 from random import shuffle
 import time
+import webbrowser
 
 API_KEY = "" # Enter your API key here
 
@@ -143,12 +144,15 @@ def prevPage():
     import page2 as page2
     page2.ws.deiconify()
     
+def openweb():
+    webbrowser.open('api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}',new=new)
+
 
 Button(
     root,
     text="Next Page",
     font=f,
-    command=prevPage
+    command=openweb()
     ).pack(fill=X, expand=TRUE, side=LEFT)
 
 root.mainloop()
